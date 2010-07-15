@@ -4,7 +4,8 @@ class SentsController < ApplicationController
     layout "admin"    
 
     def show
-        @servidor = "http://localhost:3007"
+        #@servidor = "http://localhost:3007"
+        @servidor = "http://mailer.fasterm.com.br"
         @TotalEmails = Sent.all(:conditions => ['sender_id = ?',params[:id]]).count
         @TotalEmailsEnviados = Sent.all(:conditions => ['sender_id = ? AND sent = 1',params[:id]]).count
         
