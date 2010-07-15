@@ -19,6 +19,6 @@ class ViewsController < ApplicationController
         end
       
         #INSERE CONTROLE DE LEITURAS
-        @corpo = @corpo + "<img src='#{@servidor}/sents/#{s.id.to_s}/read' style='visible:hidden;'>"
+        @corpo = @corpo + "<img src='#{@servidor}/sents/#{@Email.id.to_s}/read' style='visible:hidden;'>"
     end
 end
