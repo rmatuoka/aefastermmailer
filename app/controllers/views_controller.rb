@@ -19,9 +19,6 @@ class ViewsController < ApplicationController
         end
       
         #INSERE CONTROLE DE LEITURAS
-        @Sent = Sent.find(@Email)
-        @Sent.readed = 1
-        @Sent.save
-        #@corpo = @corpo + "<img src='#{@servidor}/sents/#{@Email.id.to_s}/read' style='visible:hidden;'>"
+
     end
 end
