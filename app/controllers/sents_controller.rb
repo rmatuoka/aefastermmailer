@@ -7,7 +7,7 @@ class SentsController < ApplicationController
         #@servidor = "http://localhost:3007"
         @servidor = "http://mailer.fasterm.com.br"
         @TotalEmails = Sent.all(:conditions => ['sender_id = ?',params[:id]]).size
-        @TotalEmailsEnviados = Sent.all(:conditions => ['sender_id = ? AND sent = 1',params[:id]]).count
+        @TotalEmailsEnviados = Sent.all(:conditions => ['sender_id = ? AND sent = 1',params[:id]]).size
         
         #PEGA OS 3 PRIMEIROS REGISTROS        
         @Sents = Sent.find(:all, :conditions => ['sender_id = ? AND sent = 0', params[:id]], :order => 'id DESC', :limit => 3 )
