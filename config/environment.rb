@@ -45,11 +45,11 @@ ActionMailer::Base.default_content_type = "text/html"
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.raise_delivery_errors = true
 ActionMailer::Base.smtp_settings = {
-    :address => "smtp.agenciaeconomica.com.br",
+    :address => "smtp.fasterm.com.br",
     :port => 587,
-    :domain => "agenciaeconomica.com.br",
-    :user_name => "rmatuoka@agenciaeconomica.com.br",
-    :password => "rafael11",
+    :domain => "fasterm.com.br",
+    :user_name => "noreply@fasterm.com.br",
+    :password => "noreplyfasterm",
     :authentication => :login
 }
 

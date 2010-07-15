@@ -23,6 +23,7 @@ class ContactsController < ApplicationController
         mails.split(',').each do |e|
             @Contact = @Group.contacts.create(params[:contact])    		
             @Contact.email = e
+            @Contact.readed = 0
             @Contact.save
 		    end
 

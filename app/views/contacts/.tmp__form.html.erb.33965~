@@ -13,9 +13,5 @@
 		<i>*separe os e-mails por , (virgula)</i>
 	</label><br><br>
 	
-	<label>
-		<%=f.hidden_field :readed, :value => 1%>
-	</label>
-	
 	<button type="submit">Salvar</button>
 <% end %>

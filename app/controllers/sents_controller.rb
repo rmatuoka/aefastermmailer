@@ -4,7 +4,7 @@ class SentsController < ApplicationController
     layout "admin"    
 
     def show
-        @servidor = "http://localhost:3001"
+        @servidor = "http://localhost:3007"
         @TotalEmails = Sent.all(:conditions => ['sender_id = ?',params[:id]]).count
         @TotalEmailsEnviados = Sent.all(:conditions => ['sender_id = ? AND sent = 1',params[:id]]).count
         
@@ -48,7 +48,10 @@ class SentsController < ApplicationController
             @corpo = @corpo + "<img src='#{@servidor}/sents/#{s.id.to_s}/read' style='visible:hidden;'>"
             
             #INSERE CASO NAO CONSIGA VISUALIZAR
-            @corpo = @corpo + "<p align='center'><a href='#{@servidor}/views/#{@Email.id.to_s}' target='_blank'><font color='#666666' size='2' color='#CCCCCC'>Caso n√£o consiga visualizar este email, clique aqui</font></a><p>"
+            @corpo = @corpo + "<p align='center'><a href='#{@servidor}/views/#{@Email.id.to_s}' target='_blank'><font color='#666666' size='2' color='#000000'>Caso n„o consiga visualizar este email, clique aqui</font></a><p>"
+            
+            #INSERE REMOVER DA BASE
+            @corpo = @corpo + "<p align='center'><font color='#666666' size='2' color='#000000'>Caso n„o queira mais receber nossos informativos, responda este e-mail e escreva no corpo do e-mail REMOVER</font></p>'"
             
             if Newsletter.deliver_enviar(@corpo.to_s,@Sender.subject, @Contact.email)
                   #Enviou
