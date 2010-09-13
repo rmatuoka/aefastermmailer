@@ -35,7 +35,7 @@ class SentsController < ApplicationController
               @corpo = "<table width='100%' height='100%' cellpadding='0' cellspacing='0' border='0'>
                       <tr>
                       <td align='center' valign='middle' bgcolor='#{@Email.bgcolor}'>
-                        <a href='#{@servidor}#/click?sent=#{s.id.to_s}&l={@Email.link}' target='_blank'><img src='#{@servidor}#{@Email.image.url}' border='0' /></a>
+                        <a href='#{@servidor}/click?sent=#{s.id.to_s}&l=#{@Email.link}' target='_blank'><img src='#{@servidor}#{@Email.image.url}' border='0' /></a>
                       </td>
                       </tr>
                       </table>"
