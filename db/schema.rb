@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100429151622) do
+ActiveRecord::Schema.define(:version => 20100913172849) do
 
   create_table "contacts", :force => true do |t|
     t.integer  "readed",     :limit => 1,                :null => false
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(:version => 20100429151622) do
     t.integer  "sender_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "clicked"
   end
 
   create_table "settings", :force => true do |t|
