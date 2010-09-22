@@ -44,29 +44,27 @@ Rails::Initializer.run do |config|
 end
 
 #MAILER PADRAO
-ActionMailer::Base.default_content_type = "text/html"
-ActionMailer::Base.delivery_method = :smtp
-ActionMailer::Base.raise_delivery_errors = true
-ActionMailer::Base.smtp_settings = {
-    :address => "smtp.fasterm.com.br",
-    :port => 587,
-    :domain => "fasterm.com.br",
-    :user_name => "noreply@fasterm.com.br",
-    :password => "noreplyfasterm",
-    :authentication => :login
-}
-
-#require 'smtp_tls'
-
 #ActionMailer::Base.default_content_type = "text/html"
-#ActionMailer::Base.delivery_method = :sendmail
+#ActionMailer::Base.delivery_method = :smtp
+#ActionMailer::Base.raise_delivery_errors = true
 #ActionMailer::Base.smtp_settings = {
-#:address => "smtp.agenciaeconomica.com.br",
-#:port => 587,
-#:authentication => :login,
-#:domain => "agenciaeconomica.com.br",
-#:user_name => "rmatuoka",
-#:password => "rafael11"
+#    :address => "smtp.smtp.gmail.com",
+#    :port => 587,
+#    :domain => "fasterm.com.br",
+#    :user_name => "noreply@fasterm.com.br",
+#    :password => "noreplyfasterm",
+#    :authentication => :login
 #}
+
+require 'smtp_tls'
+
+require "smtp_tls"
+ActionMailer::Base.smtp_settings = {
+:address => "smtp.gmail.com",
+:port => 587,
+:authentication => :plain,
+:user_name => "agenciaeconomica.mailer",
+:password => 'aemailer'
+}
 
 
