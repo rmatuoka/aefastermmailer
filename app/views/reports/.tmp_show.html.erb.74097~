@@ -24,10 +24,10 @@
 		        @Sents.each do |s|
 		            #LE O EMAIL
 		            @Contact = Contact.first(:conditions => ['id = ?', s.contact_id])
-					if s.cicked > 0
-						read = "Clicou"
+					if s.readed > 0
+						read = "Lido"
 					else
-						read = "Não clicou"
+						read = "Não Lido"
 					end
 					%>
 					
