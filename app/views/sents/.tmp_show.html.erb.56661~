@@ -1,5 +1,5 @@
 <% content_for :head do %>
-<meta http-equiv="refresh" content="45; URL=<%=@servidor%><%=sent_path(params[:id])%>">
+<meta http-equiv="refresh" content="24; URL=<%=@servidor%><%=sent_path(params[:id])%>">
 <% end %> 
 
 <div id="Breadcrumb">
